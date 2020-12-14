@@ -1,0 +1,29 @@
+<form #formulario="ngForm" (ngSubmit)="agregar(formulario)" (keydown.enter)="$event.preventDefault()">
+  <div class="row">
+    <div class="col">
+      <input class="form-control" 
+        [(ngModel)]="nombre" 
+        name="nombre"
+        minlength="5"
+        #nombreForm="ngModel"
+        required
+        placeholder="Nombre del Restaurante"
+        (keydown.enter)="agregar()">
+    </div>
+    <div class="col">
+      <input class="form-control" 
+        [(ngModel)]="ciudad" 
+        name="ciudad"
+        minlength="5"
+        #nombreForm="ngModel"
+        required
+        placeholder="Ciudad"
+        (keydown.enter)="agregar()">
+    </div>
+    <div class="col">
+    <button *ngIf="nombre.length>0&&ciudad.length>0" class="btn btn-info" type="submit" >agregar</button>
+    <button *ngIf="nombre.length<=0||ciudad.length<=0" class="btn btn-info" type="submit" disabled>agregar</button>
+    </div>
+  </div>
+  <div *ngIf="existe">Este restaurante que intentò ingresar ya existe en esa ciudad</div>
+</form>

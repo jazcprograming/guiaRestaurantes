@@ -1,0 +1,12 @@
+<div class="limiter">
+    <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="table100 mb-4">
+          <app-inputs [items]="items" [existe]="existe"  (salida)="agregar($event)"></app-inputs>
+        </div>
+        <div class="table100">
+            <app-tabla [items]="items"></app-tabla>
+        </div>
+      </div>
+    </div>
+</div>
